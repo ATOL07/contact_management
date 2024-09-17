@@ -1,0 +1,11 @@
+<h2>Contact List</h2>
+<form method="GET">
+    <input type="text" name="q" placeholder="Search by name or email">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    {% for contact in contacts %}
+    <li><a href="{{ contact.id }}/">{{ contact.first_name }}</a> - {{ contact.email }} - {{ contact.phone_number }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_contact' %}">Add New Contact</a>
